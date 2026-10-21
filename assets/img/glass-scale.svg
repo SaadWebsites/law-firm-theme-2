@@ -1,0 +1,203 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="380" viewBox="0 0 320 380" role="img" aria-label="A classical brass balance scale standing inside a glass tank of still water, lit from above" fill="none">
+  <title>Justice, weighed carefully</title>
+  <defs>
+    <linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".34"/>
+      <stop offset=".28" stop-color="#a8c8d6" stop-opacity=".14"/>
+      <stop offset=".62" stop-color="#6f93a8" stop-opacity=".10"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity=".20"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".95"/>
+      <stop offset=".34" stop-color="#ffffff" stop-opacity=".28"/>
+      <stop offset=".68" stop-color="#8fa6b4" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity=".72"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7fb4c4" stop-opacity=".26"/>
+      <stop offset=".5" stop-color="#5d8ea3" stop-opacity=".14"/>
+      <stop offset="1" stop-color="#3f6a80" stop-opacity=".24"/>
+    </linearGradient>
+    <linearGradient id="brass" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7a5f2c"/>
+      <stop offset=".26" stop-color="#c9a75a"/>
+      <stop offset=".46" stop-color="#f0dfae"/>
+      <stop offset=".62" stop-color="#b08c3f"/>
+      <stop offset="1" stop-color="#6b5325"/>
+    </linearGradient>
+    <linearGradient id="brassSoft" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e6d29a"/>
+      <stop offset=".55" stop-color="#b1893c"/>
+      <stop offset="1" stop-color="#6f5626"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".5" cy=".42" r=".62">
+      <stop offset="0" stop-color="#9fd4e2" stop-opacity=".45"/>
+      <stop offset=".45" stop-color="#c9a75a" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#c9a75a" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="caustic" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".55"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bubble" cx=".35" cy=".3" r=".72">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".95"/>
+      <stop offset=".55" stop-color="#cfe0e8" stop-opacity=".38"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity=".12"/>
+    </radialGradient>
+
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="5"/>
+    </filter>
+    <filter id="softWide" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="11"/>
+    </filter>
+    <filter id="wobble" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency=".011 .016" numOctaves="2" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="7" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="sheenBlur" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.4"/>
+    </filter>
+    <clipPath id="tankClip">
+      <rect x="44" y="22" width="232" height="308" rx="12"/>
+    </clipPath>
+  </defs>
+
+  <style>
+    .tank { animation: drift 14s ease-in-out infinite; transform-box: view-box; transform-origin: 160px 190px; }
+    .sway { animation: sway 9s ease-in-out infinite; transform-box: view-box; transform-origin: 160px 176px; }
+    .swaySlow { animation: sway 13s ease-in-out infinite; transform-box: view-box; transform-origin: 160px 176px; }
+    .pulse { animation: pulse 7s ease-in-out infinite; }
+    .waveA { animation: slide 11s linear infinite; }
+    .waveB { animation: slide 17s linear infinite; }
+    .sweep { animation: sweep 13s ease-in-out infinite; }
+    .caust1 { animation: caust 15s ease-in-out infinite; }
+    .caust2 { animation: caust 19s ease-in-out infinite reverse; }
+    .caust3 { animation: caust 12s ease-in-out infinite; }
+    .b1 { animation: rise 13s linear infinite; }
+    .b2 { animation: rise 17s linear infinite; }
+    .b3 { animation: rise 21s linear infinite; }
+    .b4 { animation: rise 15s linear infinite; }
+    .b5 { animation: rise 24s linear infinite; }
+    .b6 { animation: rise 18s linear infinite; }
+    .b7 { animation: rise 26s linear infinite; }
+    .b8 { animation: rise 20s linear infinite; }
+    .sheen { animation: sheen 9s ease-in-out infinite; }
+    @keyframes drift { 0%, 100% { transform: rotate(-.5deg) translateY(0); } 50% { transform: rotate(.5deg) translateY(-5px); } }
+    @keyframes sway { 0%, 100% { transform: rotate(-1.7deg); } 50% { transform: rotate(1.7deg); } }
+    @keyframes pulse { 0%, 100% { opacity: .4; } 50% { opacity: .72; } }
+    @keyframes slide { from { transform: translateX(0); } to { transform: translateX(120px); } }
+    @keyframes sweep { 0%, 12% { transform: translateX(-150px) skewX(-14deg); opacity: 0; } 30% { opacity: .5; } 52% { transform: translateX(300px) skewX(-14deg); opacity: 0; } 100% { transform: translateX(300px) skewX(-14deg); opacity: 0; } }
+    @keyframes caust { 0%, 100% { transform: translateX(-14px) scale(1); opacity: .38; } 50% { transform: translateX(18px) scale(1.22); opacity: .72; } }
+    @keyframes rise { 0% { transform: translateY(0) scale(.7); opacity: 0; } 12% { opacity: .85; } 86% { opacity: .6; } 100% { transform: translateY(-300px) scale(1.1); opacity: 0; } }
+    @keyframes sheen { 0%, 100% { opacity: .3; } 50% { opacity: .8; } }
+    @media (prefers-reduced-motion: reduce) {
+      .tank, .sway, .swaySlow, .pulse, .waveA, .waveB, .sweep, .caust1, .caust2, .caust3, .b1, .b2, .b3, .b4, .b5, .b6, .b7, .b8, .sheen { animation: none; }
+    }
+  </style>
+
+  <g class="tank">
+    <!-- ambient light behind the case -->
+    <ellipse class="pulse" cx="160" cy="150" rx="132" ry="128" fill="url(#glow)" filter="url(#softWide)"/>
+
+    <!-- water body and caustics, inside the glass -->
+    <g clip-path="url(#tankClip)">
+      <rect x="44" y="118" width="232" height="212" fill="url(#water)"/>
+
+      <!-- floor of the tank -->
+      <rect x="44" y="296" width="232" height="34" fill="#7d97a6" opacity=".16"/>
+      <line x1="44" y1="296" x2="276" y2="296" stroke="#ffffff" stroke-opacity=".28" stroke-width="1"/>
+
+      <!-- refracted, wobbling column of light behind the scale -->
+      <g filter="url(#wobble)" opacity=".5">
+        <path d="M126 22 L194 22 L214 330 L106 330 Z" fill="#ffffff" opacity=".10"/>
+        <path d="M44 210 C90 190 140 230 186 208 C220 192 250 206 276 198 L276 296 L44 296 Z" fill="#ffffff" opacity=".07"/>
+      </g>
+
+      <!-- caustics on the tank floor -->
+      <g filter="url(#soft)">
+        <ellipse class="caust1" cx="102" cy="308" rx="46" ry="9" fill="url(#caustic)"/>
+        <ellipse class="caust2" cx="176" cy="314" rx="38" ry="7" fill="url(#caustic)"/>
+        <ellipse class="caust3" cx="232" cy="306" rx="30" ry="6" fill="url(#caustic)"/>
+      </g>
+
+      <!-- water surface -->
+      <g class="waveA" opacity=".55">
+        <path d="M-60 118 q 30 -7 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 t 60 0 V 126 H -60 Z" fill="#ffffff" opacity=".30"/>
+      </g>
+      <g class="waveB" opacity=".4">
+        <path d="M-60 121 q 40 6 80 0 t 80 0 t 80 0 t 80 0 t 80 0 V 128 H -60 Z" fill="#ffffff" opacity=".22"/>
+      </g>
+      <line x1="44" y1="118" x2="276" y2="118" stroke="#ffffff" stroke-opacity=".5" stroke-width="1"/>
+
+      <!-- the scale, standing on the plinth under water -->
+      <g>
+        <!-- plinth -->
+        <path d="M118 296 H202 L208 308 H112 Z" fill="url(#brassSoft)"/>
+        <rect x="106" y="308" width="108" height="12" rx="2" fill="url(#brass)"/>
+        <rect x="112" y="320" width="96" height="8" rx="2" fill="url(#brassSoft)"/>
+        <!-- column -->
+        <rect x="154" y="186" width="12" height="112" fill="url(#brass)"/>
+        <rect x="149" y="182" width="22" height="8" rx="2" fill="url(#brassSoft)"/>
+        <!-- finial -->
+        <circle cx="160" cy="168" r="9" fill="url(#brass)"/>
+        <path d="M160 154 L164 160 L160 166 L156 160 Z" fill="#f0dfae"/>
+        <circle cx="157" cy="165" r="2.6" fill="#fffaf0" opacity=".75"/>
+
+        <!-- beam and pans, gently swaying -->
+        <g class="sway">
+          <path d="M96 176 Q160 169 224 176" stroke="url(#brass)" stroke-width="4.5" stroke-linecap="round" fill="none"/>
+          <circle cx="160" cy="173" r="6" fill="url(#brass)"/>
+          <circle cx="158.4" cy="171" r="2" fill="#fffaf0" opacity=".7"/>
+          <!-- left pan -->
+          <line x1="96" y1="177" x2="96" y2="212" stroke="#c9a75a" stroke-width="1.2" opacity=".85"/>
+          <path d="M74 212 H118 Q96 240 74 212 Z" fill="url(#brassSoft)"/>
+          <path d="M74 212 Q96 218 118 212" stroke="#f0dfae" stroke-width="1.2" fill="none" opacity=".7"/>
+          <!-- right pan -->
+          <line x1="224" y1="177" x2="224" y2="212" stroke="#c9a75a" stroke-width="1.2" opacity=".85"/>
+          <path d="M202 212 H246 Q224 240 202 212 Z" fill="url(#brassSoft)"/>
+          <path d="M202 212 Q224 218 246 212" stroke="#f0dfae" stroke-width="1.2" fill="none" opacity=".7"/>
+        </g>
+
+        <!-- slower counter-sway on the base glow -->
+        <g class="swaySlow" opacity=".5">
+          <ellipse cx="96" cy="216" rx="20" ry="4" fill="#ffffff" opacity=".25"/>
+          <ellipse cx="224" cy="216" rx="20" ry="4" fill="#ffffff" opacity=".25"/>
+        </g>
+      </g>
+
+      <!-- rising bubbles -->
+      <g>
+        <circle class="b1" cx="72" cy="300" r="3.4" fill="url(#bubble)"/>
+        <circle class="b2" cx="104" cy="286" r="2.2" fill="url(#bubble)"/>
+        <circle class="b3" cx="128" cy="310" r="4.6" fill="url(#bubble)"/>
+        <circle class="b4" cx="186" cy="292" r="3" fill="url(#bubble)"/>
+        <circle class="b5" cx="212" cy="312" r="5.2" fill="url(#bubble)"/>
+        <circle class="b6" cx="238" cy="284" r="2.6" fill="url(#bubble)"/>
+        <circle class="b7" cx="258" cy="304" r="3.8" fill="url(#bubble)"/>
+        <circle class="b8" cx="88" cy="322" r="1.8" fill="url(#bubble)"/>
+      </g>
+
+      <!-- a slow band of light passing through the water -->
+      <rect class="sweep" x="96" y="22" width="34" height="308" fill="#ffffff" opacity=".4" filter="url(#sheenBlur)"/>
+
+      <!-- inner glass sheen on the front pane -->
+      <g class="sheen" filter="url(#sheenBlur)">
+        <path d="M62 30 L84 30 L62 150 Z" fill="#ffffff" opacity=".55"/>
+        <path d="M240 250 L252 250 L232 320 L220 320 Z" fill="#ffffff" opacity=".4"/>
+      </g>
+    </g>
+
+    <!-- the glass case itself -->
+    <rect x="44" y="22" width="232" height="308" rx="12" fill="url(#glass)"/>
+    <rect x="44.8" y="22.8" width="230.4" height="306.4" rx="11.4" stroke="url(#edge)" stroke-width="1.6" fill="none"/>
+    <rect x="52" y="30" width="216" height="292" rx="7" stroke="#ffffff" stroke-opacity=".26" stroke-width="1" fill="none"/>
+    <!-- top rim highlight -->
+    <path d="M50 30 H270" stroke="#ffffff" stroke-opacity=".8" stroke-width="2" stroke-linecap="round"/>
+    <path d="M50 322 H270" stroke="#5d7382" stroke-opacity=".35" stroke-width="1.4" stroke-linecap="round"/>
+    <!-- case base -->
+    <rect x="36" y="330" width="248" height="16" rx="3" fill="url(#brassSoft)"/>
+    <rect x="30" y="346" width="260" height="10" rx="3" fill="url(#brass)"/>
+    <rect x="30" y="346" width="260" height="3" rx="1.5" fill="#ffffff" opacity=".35"/>
+  </g>
+</svg>
