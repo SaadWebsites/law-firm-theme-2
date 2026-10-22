@@ -2,7 +2,7 @@
    HARLAN & VOSS — Contact form
    ============================================================ */
 ;(function () {
-  const OWNER_EMAIL = 'saadabdullah7599@gmail.com'
+  const OWNER_EMAIL = 'opencode@gmail.com'
   const $ = (s) => document.querySelector(s)
 
   function init() {

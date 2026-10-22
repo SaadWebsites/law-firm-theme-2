@@ -3,7 +3,7 @@
    Scripted conversation, quick replies, lead capture.
    ============================================================ */
 ;(function () {
-  const OWNER_EMAIL = 'saadabdullah7599@gmail.com'
+  const OWNER_EMAIL = 'opencode@gmail.com'
   const $ = (s, c) => (c || document).querySelector(s)
 
   let panel, body, input, chips, fab, sent

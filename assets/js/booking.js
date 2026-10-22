@@ -3,7 +3,7 @@
    date picker -> time slots -> format -> details -> submit
    ============================================================ */
 ;(function () {
-  const OWNER_EMAIL = 'saadabdullah7599@gmail.com'
+  const OWNER_EMAIL = 'opencode@gmail.com'
   const $ = (s, c) => (c || document).querySelector(s)
   const $$ = (s, c) => [...(c || document).querySelectorAll(s)]
 
